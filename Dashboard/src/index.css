@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --color-deep-blue: #0a192f;
+  --color-deep-blue-dark: #051127;
+  --color-deep-blue-darker: #030b1a;
+  --color-deep-blue-light: #0f2343;
+  --color-electric-blue: #38bdf8;
+  --color-neon-green: #64ffda;
+}
+
+body {
+  margin: 0;
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-deep-blue);
+  color: #f8fafc;
+}
+
+.font-ibm {
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+/* Neuron grid animation */
+.neuron-grid {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle, rgba(56, 189, 248, 0.15) 2px, transparent 2px),
+    radial-gradient(circle, rgba(100, 255, 218, 0.1) 2px, transparent 2px);
+  background-size: 50px 50px, 100px 100px;
+  background-position: 0 0, 25px 25px;
+  animation: pulse 4s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+  0% {
+    background-image: 
+      radial-gradient(circle, rgba(56, 189, 248, 0.15) 2px, transparent 2px),
+      radial-gradient(circle, rgba(100, 255, 218, 0.1) 2px, transparent 2px);
+  }
+  50% {
+    background-image: 
+      radial-gradient(circle, rgba(56, 189, 248, 0.2) 3px, transparent 3px),
+      radial-gradient(circle, rgba(100, 255, 218, 0.15) 3px, transparent 3px);
+  }
+  100% {
+    background-image: 
+      radial-gradient(circle, rgba(56, 189, 248, 0.15) 2px, transparent 2px),
+      radial-gradient(circle, rgba(100, 255, 218, 0.1) 2px, transparent 2px);
+  }
+}
+
+/* Smooth transitions */
+button, .card, .panel {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-deep-blue-darker);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e3a5f;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #264b7a;
+}
